@@ -3,7 +3,7 @@ document.getElementById('myBtn').addEventListener('click', getData);
 
 function getData() {
 
-    fetch('https://randomuser.me/api/?results=20')
+    fetch('https://randomuser.me/api/?results=30')
         .then(res => res.json())
         .then(data => {
             
@@ -13,11 +13,11 @@ function getData() {
                 return (a.dob.age - b.dob.age)
             })
            
-            let output = "<h2><center>Get User Data</center></h2>";
+            let output = "<h2><center>Users</center></h2>";
 
             //Get Data Loop Through
             author.forEach(function (lists) {
-                if(lists.dob.age >= 40)
+                if(lists.dob.age >= 35)
                 output += `
                 <div class="container">
                     <div class="card mt-4 bg-light">
@@ -29,9 +29,8 @@ function getData() {
                             <li class="list-group-item">Age: ${lists.dob.age}</li>
                             <li class="list-group-item">Email ID: ${lists.email}</li>
                             <li class="list-group-item">Gender: ${lists.gender}</li>
-                            <li class="list-group-item">City: ${lists.location.city}</li>
                             <li class="list-group-item">Country: ${lists.location.country}</li>
-                            <li class="list-group-item">PostCode: ${lists.location.postcode}</li>
+                            
                         </ul>
                     </div>
                 </div> `;
