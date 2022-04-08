@@ -1,3 +1,4 @@
+//Get Btn And Create Function
 document.getElementById('myBtn').addEventListener('click', getData);
 
 function getData() {
@@ -5,14 +6,18 @@ function getData() {
     fetch('https://randomuser.me/api/?results=20')
         .then(res => res.json())
         .then(data => {
+            
 
             let author = data.results;
-            let output = "<h2><center>Users</center></h2>";
-            
+            author.sort(function (a, b) {
+                return (a.dob.age - b.dob.age)
+            })
+           
+            let output = "<h2><center>Get User Data</center></h2>";
+
+            //Get Data Loop Through
             author.forEach(function (lists) {
-                
-                if(lists.dob.age >=50) {
-                    
+                if(lists.dob.age >= 40)
                 output += `
                 <div class="container">
                     <div class="card mt-4 bg-light">
@@ -26,17 +31,14 @@ function getData() {
                             <li class="list-group-item">Gender: ${lists.gender}</li>
                             <li class="list-group-item">City: ${lists.location.city}</li>
                             <li class="list-group-item">Country: ${lists.location.country}</li>
-                            
+                            <li class="list-group-item">PostCode: ${lists.location.postcode}</li>
                         </ul>
                     </div>
                 </div> `;
-            }
-                else
-                console.log("Veri Yok")
-                
             });
+
+            //Show On Our Screen All Data
             document.getElementById('output').innerHTML = output;
 
         });
 };
-
