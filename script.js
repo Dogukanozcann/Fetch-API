@@ -25,7 +25,6 @@ function getData() {
                             <li class="list-group-item"><h2>Name: ${lists.name.first}</h2></li>
                             <li class="list-group-item"><img src="${lists.picture.large}"></li>
                             <li class="list-group-item">Phone Number: ${lists.cell}</li>
-                            <li class="list-group-item">DOB: ${lists.dob.date}</li>
                             <li class="list-group-item">Age: ${lists.dob.age}</li>
                             <li class="list-group-item">Email ID: ${lists.email}</li>
                             <li class="list-group-item">Gender: ${lists.gender}</li>
