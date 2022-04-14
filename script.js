@@ -28,8 +28,7 @@ function getData() {
                             <li class="list-group-item">Age: ${lists.dob.age}</li>
                             <li class="list-group-item">Email ID: ${lists.email}</li>
                             <li class="list-group-item">Gender: ${lists.gender}</li>
-                            <li class="list-group-item">Country: ${lists.location.country}</li>
-                            
+                            <li class="list-group-item">Country: ${lists.location.country}</li>   
                         </ul>
                     </div>
                 </div> `;
